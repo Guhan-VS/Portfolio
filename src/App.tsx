@@ -46,9 +46,14 @@ function App() {
                 <span style={{ fontSize: '0.8rem', padding: '0.3rem 0.8rem' }}>Python</span>
                 <span style={{ fontSize: '0.8rem', padding: '0.3rem 0.8rem' }}>Automation</span>
               </div>
-              <a href="https://github.com/Guhan-VS/Smart-File-Organsier" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ fontSize: '0.9rem', padding: '0.6rem 1.5rem' }}>
-                View on GitHub
-              </a>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <a href="https://github.com/Guhan-VS/Smart-File-Organsier" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ fontSize: '0.9rem', padding: '0.6rem 1.5rem', background: 'transparent', border: '1px solid var(--primary-purple)' }}>
+                  Source Code
+                </a>
+                <a href="/SmartFileOrganiser.exe" download className="cta-button" style={{ fontSize: '0.9rem', padding: '0.6rem 1.5rem' }}>
+                  Download .EXE
+                </a>
+              </div>
             </div>
 
             <div className="project-card">
