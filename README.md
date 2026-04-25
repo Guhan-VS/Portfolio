@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# My Portfolio & Apps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my professional portfolio! This project is built with **React**, **TypeScript**, and **Vite**, and is designed to be hosted on **AWS Amplify**.
 
-Currently, two official plugins are available:
+## Features
+- **Modern Portfolio**: Showcases my skills and projects.
+- **Live Web Apps**: Integrated interactive tools like the **Password Strength Checker**.
+- **Responsive Design**: Works on mobile, tablet, and desktop.
+- **AWS Amplify Ready**: Continuous deployment enabled via GitHub.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Integrated Apps
+### 1. Password Strength Checker
+A web-based version of my Python tool. It uses real-time regex analysis to provide security feedback based on OWASP guidelines.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 How to Deploy to AWS Amplify
 
-## Expanding the ESLint configuration
+### Step 1: Push to GitHub
+1. Create a new repository on GitHub named `portfolio`.
+2. Link your local project to GitHub:
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
+   git branch -M main
+   git push -u origin main
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Step 2: Connect to AWS Amplify
+1. Log in to the [AWS Management Console](https://console.aws.amazon.com/).
+2. Search for **AWS Amplify**.
+3. Click **"Create new app"** and select **GitHub**.
+4. Authorize AWS to access your GitHub and select the `portfolio` repository.
+5. Amplify will automatically detect the **Vite** build settings:
+   - **Build command**: `npm run build`
+   - **Output directory**: `dist`
+6. Click **"Save and deploy"**.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Step 3: View your Site!
+Amplify will provide a URL (e.g., `https://main.d12345.amplifyapp.com`) where your portfolio is live. Every time you `git push`, your site will update automatically!
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Local Development
+1. Install dependencies: `npm install`
+2. Run locally: `npm run dev`
+3. Build project: `npm run build`
