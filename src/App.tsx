@@ -33,8 +33,24 @@ function App() {
         </section>
 
         <section id="projects" className="projects">
-          <h2>Featured Project</h2>
+          <h2>Projects</h2>
           <div className="project-grid">
+            <div className="project-card">
+              <h3>Smart File Organiser</h3>
+              <p>
+                A Python automation tool that declutters your workspace by 
+                automatically categorizing and sorting files into structured folders 
+                based on their extensions.
+              </p>
+              <div className="skill-tags" style={{ justifyContent: 'flex-start', marginBottom: '1.5rem' }}>
+                <span style={{ fontSize: '0.8rem', padding: '0.3rem 0.8rem' }}>Python</span>
+                <span style={{ fontSize: '0.8rem', padding: '0.3rem 0.8rem' }}>Automation</span>
+              </div>
+              <a href="https://github.com/Guhan-VS/Smart-File-Organsier" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ fontSize: '0.9rem', padding: '0.6rem 1.5rem' }}>
+                View on GitHub
+              </a>
+            </div>
+
             <div className="project-card">
               <h3>Password Strength Checker</h3>
               <p>
