@@ -122,7 +122,7 @@ function App() {
             <span>Selenium</span>
             <span>Git/GitHub</span>
             <span>React</span>
-            <span>AWS Amplify</span>
+            <span>Vercel</span>
             <span>OOP/DBMS/SDLC</span>
           </div>
         </section>
