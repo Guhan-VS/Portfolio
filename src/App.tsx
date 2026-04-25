@@ -96,6 +96,11 @@ function App() {
 
             <div className="project-card">
               <h3>Bluetooth-Enabled Controlled Car</h3>
+              <img 
+                src="/bluetooth-car.jpg" 
+                alt="Bluetooth Controlled Car" 
+                style={{ width: '100%', borderRadius: '12px', marginBottom: '1.5rem', border: '1px solid var(--border-color)' }} 
+              />
               <p>
                 Built a 2WD robot car controlled via a mobile app using the HC-05 Bluetooth module. 
                 Managed motor logic and speed control using an Arduino Uno and L298N Motor Driver.
