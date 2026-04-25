@@ -95,11 +95,15 @@ function App() {
             </div>
 
             <div className="project-card">
-              <h3>Computer-Controlled Robot</h3>
-              <p>Developed a basic robot controlled via computer commands using serial communication (Arduino UNO, C/C++).</p>
+              <h3>Bluetooth-Enabled Controlled Car</h3>
+              <p>
+                Built a 2WD robot car controlled via a mobile app using the HC-05 Bluetooth module. 
+                Managed motor logic and speed control using an Arduino Uno and L298N Motor Driver.
+              </p>
               <div className="skill-tags" style={{ justifyContent: 'flex-start', marginBottom: '1.5rem' }}>
                 <span>Arduino</span>
-                <span>C/C++</span>
+                <span>HC-05</span>
+                <span>Embedded C</span>
               </div>
             </div>
 
