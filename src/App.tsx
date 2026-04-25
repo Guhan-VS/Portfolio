@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="portfolio">
       <nav className="navbar">
-        <div className="logo">GUHAN.DEV</div>
+        <div className="logo">GUHAN V S</div>
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -14,7 +14,10 @@ function App() {
       </nav>
 
       <header className="hero">
-        <h1>Building for the <span className="purple-text">Secure</span> Web</h1>
+        <h1>Guhan V S</h1>
+        <p style={{ fontSize: '1.5rem', marginTop: '1rem', color: 'var(--accent-purple)' }}>
+          Building for the <span className="purple-text">Secure</span> Web
+        </p>
         <p>
           Software Developer specialized in Python, React, and AWS. 
           Focused on creating high-performance applications with security at their core.
@@ -26,7 +29,7 @@ function App() {
         <section id="about" className="about">
           <h2>About Me</h2>
           <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-            I am a developer passionate about building tools that solve real-world problems. 
+            I am Guhan V S, a developer passionate about building tools that solve real-world problems. 
             This portfolio serves as a hub for my latest projects and experiments, 
             deployed globally using <strong>AWS Amplify</strong> for maximum reliability and speed.
           </p>
