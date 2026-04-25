@@ -86,15 +86,6 @@ function App() {
             </div>
 
             <div className="project-card">
-              <h3>Flora X Farmer Assistance</h3>
-              <p>Designed an agriculture-focused app idea for disease identification and farmer data tracking, including an alert system.</p>
-              <div className="skill-tags" style={{ justifyContent: 'flex-start', marginBottom: '1.5rem' }}>
-                <span>Python</span>
-                <span>Database Design</span>
-              </div>
-            </div>
-
-            <div className="project-card">
               <h3>Bluetooth-Enabled Controlled Car</h3>
               <img 
                 src="/bluetooth-car.jpg" 
