@@ -84,6 +84,9 @@ function App() {
 
       <footer>
         <p>&copy; {new Date().getFullYear()} Guhan. Handcrafted with Passion.</p>
+        <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.6 }}>
+          Last updated: {new Date().toLocaleDateString()}
+        </p>
       </footer>
     </div>
   )
