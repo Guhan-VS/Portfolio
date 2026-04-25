@@ -1,153 +1,24 @@
-import './App.css'
-import PasswordChecker from './apps/PasswordChecker/PasswordChecker'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Education from './pages/Education';
+import Projects from './pages/Projects';
+import Certifications from './pages/Certifications';
+import './App.css';
 
 function App() {
-  const certifications = [
-    { title: 'IBM Full Stack Software Developer', issuer: 'IBM', year: '2025' },
-    { title: 'Microsoft AI & ML Engineering', issuer: 'Microsoft', year: '2025' },
-    { title: 'Google Data Analytics Certificate', issuer: 'Google', year: '2025' },
-    { title: 'IBM AI Developer', issuer: 'IBM', year: '2025' },
-    { title: 'Google Gen AI Program', issuer: 'GDG', year: '2024-2025' },
-    { title: 'Google IT Support & Automation', issuer: 'Google', year: '2025' },
-  ];
-
   return (
-    <div className="portfolio">
-      <nav className="navbar">
-        <div className="logo">GUHAN V S</div>
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-        </div>
-      </nav>
-
-      <header className="hero">
-        <h1>Guhan V S</h1>
-        <p style={{ fontSize: '1.2rem', marginTop: '1rem', color: 'var(--accent-purple)', fontWeight: '500', letterSpacing: '0.1em' }}>
-          CYBERSECURITY | CLOUD COMPUTING | DEVOPS
-        </p>
-        <p style={{ maxWidth: '700px', margin: '1.5rem auto 0', opacity: 0.9 }}>
-          Building secure infrastructure and automated pipelines. 
-          Focused on the intersection of protection, scale, and efficiency.
-        </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2.5rem' }}>
-          <a href="#projects" className="cta-button">Explore Projects</a>
-          <a href="https://www.linkedin.com/in/guhanvs06/" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ background: 'transparent', border: '1px solid var(--primary-purple)' }}>LinkedIn</a>
-        </div>
-      </header>
-
-      <main>
-        <section id="about" className="about">
-          <h2>Professional Focus</h2>
-          <div className="project-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div className="project-card" style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🛡️</div>
-              <h3 style={{ fontSize: '1.2rem' }}>Cybersecurity</h3>
-              <p style={{ fontSize: '0.9rem' }}>Implementing OWASP standards, secure coding practices, and vulnerability assessment tools.</p>
-            </div>
-            <div className="project-card" style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>☁️</div>
-              <h3 style={{ fontSize: '1.2rem' }}>Cloud Computing</h3>
-              <p style={{ fontSize: '0.9rem' }}>Architecting scalable solutions on AWS and Vercel with a focus on high availability.</p>
-            </div>
-            <div className="project-card" style={{ textAlign: 'center', padding: '2rem' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🚀</div>
-              <h3 style={{ fontSize: '1.2rem' }}>DevOps</h3>
-              <p style={{ fontSize: '0.9rem' }}>Automating workflows through CI/CD pipelines and scripting to streamline delivery.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="education" className="education">
-          <h2>Education</h2>
-          <div className="project-card" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-            <p style={{ color: 'var(--primary-purple)', fontWeight: 'bold' }}>Sri Krishna Arts and Science College, Coimbatore</p>
-            <p>2024 – 2027</p>
-          </div>
-        </section>
-
-        <section id="projects" className="projects">
-          <h2>Projects</h2>
-          <div className="project-grid">
-            <div className="project-card">
-              <h3>Smart File Organiser</h3>
-              <p>Built a desktop application to organize files automatically by type and keywords. Improved efficiency and reduced manual sorting.</p>
-              <div className="skill-tags" style={{ justifyContent: 'flex-start', marginBottom: '1.5rem' }}>
-                <span>Python</span>
-                <span>Tkinter</span>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem' }}>
-                <a href="https://github.com/Guhan-VS/Smart-File-Organsier" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem', background: 'transparent', border: '1px solid var(--primary-purple)' }}>Code</a>
-                <a href="/SmartFileOrganiser.exe" download className="cta-button" style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}>Download .EXE</a>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <h3>Bluetooth-Enabled Controlled Car</h3>
-              <img 
-                src="/bluetooth-car.jpg" 
-                alt="Bluetooth Controlled Car" 
-                style={{ width: '100%', borderRadius: '12px', marginBottom: '1.5rem', border: '1px solid var(--border-color)' }} 
-              />
-              <p>
-                Built a 2WD robot car controlled via a mobile app using the HC-05 Bluetooth module. 
-                Managed motor logic and speed control using an Arduino Uno and L298N Motor Driver.
-              </p>
-              <div className="skill-tags" style={{ justifyContent: 'flex-start', marginBottom: '1.5rem' }}>
-                <span>Arduino</span>
-                <span>HC-05</span>
-                <span>Embedded C</span>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <h3>Password Strength Checker</h3>
-              <p>Real-time security analyzer implementing OWASP guidelines with interactive feedback.</p>
-              <PasswordChecker />
-            </div>
-          </div>
-        </section>
-
-        <section id="certifications" className="certifications">
-          <h2>Certifications</h2>
-          <div className="project-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-            {certifications.map((cert, index) => (
-              <div key={index} className="project-card" style={{ padding: '1.5rem', textAlign: 'center' }}>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>{cert.title}</h4>
-                <p style={{ color: 'var(--primary-purple)', fontSize: '0.9rem' }}>{cert.issuer}</p>
-                <p style={{ fontSize: '0.8rem', opacity: 0.6 }}>{cert.year}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="skills" className="skills">
-          <h2>Technical Skills</h2>
-          <div className="skill-tags">
-            <span>Python</span>
-            <span>Java</span>
-            <span>C/C++</span>
-            <span>MySQL</span>
-            <span>Selenium</span>
-            <span>Git/GitHub</span>
-            <span>React</span>
-            <span>Vercel</span>
-            <span>OOP/DBMS/SDLC</span>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <p>&copy; {new Date().getFullYear()} Guhan V S. Built for the future.</p>
-        <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', opacity: 0.6 }}>
-          Last updated: {new Date().toLocaleDateString()}
-        </p>
-      </footer>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="education" element={<Education />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="certifications" element={<Certifications />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

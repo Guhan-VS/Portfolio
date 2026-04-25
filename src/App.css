@@ -56,8 +56,11 @@ body {
   transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a.active {
   color: var(--primary-purple);
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary-purple);
+  padding-bottom: 4px;
 }
 
 /* Hero Section */
