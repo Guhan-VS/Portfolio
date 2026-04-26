@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { projectsData } from './ProjectDetail';
 
 const Home: React.FC = () => {
   return (
@@ -13,10 +15,33 @@ const Home: React.FC = () => {
           Focused on the intersection of protection, scale, and efficiency.
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2.5rem' }}>
-          <a href="/projects" className="cta-button">Explore Projects</a>
+          <Link to="/projects" className="cta-button">Explore Projects</Link>
           <a href="https://www.linkedin.com/in/guhanvs06/" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ background: 'transparent', border: '1px solid var(--primary-purple)' }}>LinkedIn</a>
         </div>
       </header>
+
+      <section className="featured-projects" style={{ padding: '6rem 0' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Featured Projects</h2>
+        <div className="project-grid">
+          {projectsData.slice(0, 3).map((project) => (
+            <Link 
+              to={`/projects/${project.id}`} 
+              key={project.id} 
+              className="project-card"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <h3>{project.title}</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{project.description}</p>
+              <div style={{ color: 'var(--primary-purple)', fontSize: '0.85rem', fontWeight: '600' }}>Learn More →</div>
+            </Link>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <Link to="/projects" style={{ color: 'var(--text-secondary)', textDecoration: 'none', borderBottom: '1px solid var(--primary-purple)' }}>
+            View All Projects
+          </Link>
+        </div>
+      </section>
 
       <section id="about" className="about">
         <h2>Professional Focus</h2>
