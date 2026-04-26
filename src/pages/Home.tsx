@@ -20,7 +20,15 @@ const Home: React.FC = () => {
         </div>
       </header>
 
-      <section className="featured-projects" style={{ padding: '6rem 0' }}>
+      <section className="profile-summary" style={{ padding: '6rem 0', textAlign: 'center', background: 'rgba(147, 51, 234, 0.03)', borderRadius: '32px', margin: '2rem 0' }}>
+        <h2>Profile</h2>
+        <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8' }}>
+          I am Guhan V S, a BCA student with hands-on experience in Python, Java, MySQL, and basic web technologies. 
+          I specialize in building tools that solve real-world problems while maintaining high security and performance standards.
+        </p>
+      </section>
+
+      <section className="featured-projects" style={{ padding: '4rem 0' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Featured Projects</h2>
         <div className="project-grid">
           {projectsData.slice(0, 3).map((project) => (
@@ -43,7 +51,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section id="about" className="about">
+      <section id="about" className="about" style={{ padding: '4rem 0' }}>
         <h2>Professional Focus</h2>
         <div className="project-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
           <div className="project-card" style={{ textAlign: 'center', padding: '2rem' }}>
@@ -62,14 +70,6 @@ const Home: React.FC = () => {
             <p style={{ fontSize: '0.9rem' }}>Automating workflows through CI/CD pipelines and scripting to streamline delivery.</p>
           </div>
         </div>
-      </section>
-
-      <section className="profile-summary" style={{ padding: '4rem 0', textAlign: 'center' }}>
-        <h2>Profile</h2>
-        <p style={{ maxWidth: '800px', margin: '0 auto', color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-          I am Guhan V S, a BCA student with hands-on experience in Python, Java, MySQL, and basic web technologies. 
-          I specialize in building tools that solve real-world problems while maintaining high security and performance standards.
-        </p>
       </section>
     </div>
   );
