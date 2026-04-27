@@ -31,7 +31,6 @@ const Navbar: React.FC = () => {
             <NavLink to="/projects/file-organiser" className="dropdown-item">File Organiser</NavLink>
             <NavLink to="/projects/bluetooth-car" className="dropdown-item">Bluetooth Car</NavLink>
             <NavLink to="/projects/password-checker" className="dropdown-item">Password Checker</NavLink>
-            <NavLink to="/projects/phishguard" className="dropdown-item">PhishGuard</NavLink>
           </div>
         </div>
       </div>

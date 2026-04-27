@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import PasswordChecker from '../apps/PasswordChecker/PasswordChecker';
-import PhishGuard from '../apps/PhishGuard/PhishGuard';
 
 interface Project {
   id: string;
@@ -54,18 +53,6 @@ const projectsData: Project[] = [
     skills: ['React', 'TypeScript', 'Cybersecurity', 'Regex'],
     detailedReportUrl: '#',
     component: <PasswordChecker />
-  },
-  {
-    id: 'phishguard',
-    title: 'PhishGuard — AI Phishing URL Detector',
-    description: 'A machine learning-powered web app that detects phishing URLs using RandomForest and PyTorch CharCNN models.',
-    fullDescription: 'PhishGuard is a production-ready phishing URL detector that combines classical ML (scikit-learn RandomForest) with deep learning (PyTorch Character-level CNN). It features a FastAPI backend with rate limiting and input validation, a realistic dataset pipeline generating 5,000+ URLs using 6 attack strategies, Docker deployment, and a comprehensive test suite achieving 98% accuracy. The interactive demo below simulates the full ML pipeline client-side.',
-    skills: ['Python', 'FastAPI', 'scikit-learn', 'PyTorch', 'Docker', 'Machine Learning'],
-    detailedReportUrl: '#',
-    links: [
-      { label: 'Source Code', url: 'https://github.com/Guhan-VS/phishing-url-detector' }
-    ],
-    component: <PhishGuard />
   }
 ];
 
