@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import PasswordChecker from '../apps/PasswordChecker/PasswordChecker';
+import CryptoTool from '../apps/CryptoTool/CryptoTool';
 
 interface Project {
   id: string;
@@ -53,6 +54,15 @@ const projectsData: Project[] = [
     skills: ['React', 'TypeScript', 'Cybersecurity', 'Regex'],
     detailedReportUrl: '#',
     component: <PasswordChecker />
+  },
+  {
+    id: 'crypto-tool',
+    title: 'Cryptography Tool',
+    description: 'AES-256-GCM file encryption, classical cipher analysis, and key management tool.',
+    fullDescription: 'A full-stack cryptography tool implementing AES-256-GCM file encryption, classical cipher analysis (Caesar, Vigenère, ROT13), and cipher detection — built with the Web Crypto API. Supports encryption of any file type with user-controlled key delivery. The server never stores keys.',
+    skills: ['Python', 'Flask', 'Cryptography', 'AES-256-GCM', 'RSA', 'Web Crypto API'],
+    detailedReportUrl: '#',
+    component: <CryptoTool />
   }
 ];
 
