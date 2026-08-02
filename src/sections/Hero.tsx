@@ -19,8 +19,6 @@ const Hero = () => {
         </p>
         <div className="hero-roles">
           <span className="hero-role">Full-Stack Dev</span>
-          <span className="hero-role">Cybersecurity</span>
-          <span className="hero-role">Cloud Computing</span>
           <span className="hero-role">AI / ML</span>
         </div>
         <div className="hero-buttons">

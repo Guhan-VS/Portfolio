@@ -17,14 +17,14 @@ const skillCategories = [
     skills: ['MySQL', 'MongoDB'],
   },
   {
-    icon: '☁️',
-    title: 'Cloud & DevOps',
-    skills: ['Oracle Cloud (OCI)', 'Google Cloud', 'Linux', 'Git', 'GitHub'],
+    icon: '⚙️',
+    title: 'DevOps & Tools',
+    skills: ['Linux', 'Git', 'GitHub'],
   },
   {
     icon: '🧠',
     title: 'Concepts',
-    skills: ['Generative AI', 'Machine Learning', 'Cybersecurity'],
+    skills: ['Generative AI', 'Machine Learning'],
   },
   {
     icon: '🤝',
