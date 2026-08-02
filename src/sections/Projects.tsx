@@ -12,7 +12,7 @@ const projects = [
       'A full-stack CRM dashboard featuring customer management, inventory tracking, and sales reporting modules. Integrates MySQL and MongoDB for hybrid storage with role-based access control and real-time dashboards.',
     skills: ['HTML', 'CSS', 'JavaScript', 'Python', 'MySQL', 'MongoDB'],
     links: [
-      { label: 'GitHub', url: 'https://github.com/Guhan-VS' },
+      { label: 'GitHub', url: 'https://github.com/Guhan-VS/CRM' },
     ],
     certificate: '/certificates/CRM Dashboard.pdf',
   },
