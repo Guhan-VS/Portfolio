@@ -25,6 +25,7 @@ const projects = [
     skills: ['Python', 'Tkinter', 'OS Module', 'File I/O'],
     links: [
       { label: 'Source Code', url: 'https://github.com/Guhan-VS/Smart-File-Organsier' },
+      { label: 'Download App', url: '/Smart_File_Organiser.exe', download: true },
     ],
     certificate: '/certificates/Smart File Organiser.pdf',
   },
@@ -71,11 +72,12 @@ const Projects = () => {
                   <a
                     key={lIdx}
                     href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={(link as any).download ? undefined : "_blank"}
+                    rel={(link as any).download ? undefined : "noopener noreferrer"}
+                    download={(link as any).download ? true : undefined}
                     className="project-link"
                   >
-                    {link.label} ↗
+                    {link.label} {(link as any).download ? '↓' : '↗'}
                   </a>
                 ))}
                 {project.hasDemo && (
