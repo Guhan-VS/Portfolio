@@ -1,25 +1,38 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Education from './pages/Education';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import Certifications from './pages/Certifications';
-import './App.css';
+import './index.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Skills from './sections/Skills';
+import Experience from './sections/Experience';
+import Projects from './sections/Projects';
+import Certifications from './sections/Certifications';
+import Publications from './sections/Publications';
+import Contact from './sections/Contact';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="education" element={<Education />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="projects/:projectId" element={<ProjectDetail />} />
-          <Route path="certifications" element={<Certifications />} />
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <div className="divider" />
+        <About />
+        <div className="divider" />
+        <Skills />
+        <div className="divider" />
+        <Experience />
+        <div className="divider" />
+        <Projects />
+        <div className="divider" />
+        <Certifications />
+        <div className="divider" />
+        <Publications />
+        <div className="divider" />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
 

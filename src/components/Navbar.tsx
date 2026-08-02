@@ -1,39 +1,77 @@
-import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-const Navbar: React.FC = () => {
-  const location = useLocation();
-  
-  const isAboutActive = location.pathname === '/education' || location.pathname === '/certifications';
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Certifications', href: '#certifications' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
+  const handleNavClick = () => {
+    setMobileOpen(false);
+  };
 
   return (
-    <nav className="navbar">
-      <NavLink to="/" className="logo">GUHAN V S</NavLink>
-      <div className="nav-links">
-        <div className="nav-item">
-          <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-        </div>
-        
-        <div className="nav-item">
-          <span className={isAboutActive ? 'active' : ''} style={{ cursor: 'pointer', color: isAboutActive ? 'var(--primary-purple)' : 'var(--text-secondary)', fontSize: '0.9rem' }}>
-            About ↓
-          </span>
-          <div className="dropdown-menu">
-            <NavLink to="/education" className={({ isActive }) => isActive ? 'dropdown-item active' : 'dropdown-item'}>Education</NavLink>
-            <NavLink to="/certifications" className={({ isActive }) => isActive ? 'dropdown-item active' : 'dropdown-item'}>Certifications</NavLink>
-          </div>
-        </div>
-
-        <div className="nav-item">
-          <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>Projects ↓</NavLink>
-          <div className="dropdown-menu">
-            <NavLink to="/projects" end className="dropdown-item">All Projects</NavLink>
-            <NavLink to="/projects/file-organiser" className="dropdown-item">File Organiser</NavLink>
-            <NavLink to="/projects/bluetooth-car" className="dropdown-item">Bluetooth Car</NavLink>
-            <NavLink to="/projects/password-checker" className="dropdown-item">Password Checker</NavLink>
-            <NavLink to="/projects/crypto-tool" className="dropdown-item">Crypto Tool</NavLink>
-          </div>
-        </div>
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      <div className="container">
+        <a href="#home" className="nav-logo">
+          <span className="gradient-text">G.</span>
+        </a>
+        <ul className={`nav-links${mobileOpen ? ' mobile-open' : ''}`}>
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className={activeSection === item.href.slice(1) ? 'active' : ''}
+                onClick={handleNavClick}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button
+          className={`hamburger${mobileOpen ? ' open' : ''}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
     </nav>
   );
