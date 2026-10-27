@@ -6,10 +6,10 @@
 
 :root {
   /* Colors */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
+  --bg-primary: #050508;
+  --bg-secondary: #0d0e17;
   --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass: rgba(255, 255, 255, 0.04);
 
   --accent-1: #8b5cf6;      /* violet */
   --accent-2: #06b6d4;      /* cyan */
@@ -394,7 +394,7 @@ a {
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(6, 182, 212, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(6, 182, 212, 0.03) 40%, transparent 70%);
   pointer-events: none;
   animation: heroPulse 8s ease-in-out infinite;
 }
@@ -1172,3 +1172,288 @@ a {
     border-radius: 0;
   }
 }
+
+/* ==============================
+   ROLLS-ROYCE STARLIGHT HEADLINER
+   ============================== */
+.starlight-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.starlight-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 50% 15%, rgba(139, 92, 246, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Starlight HUD Controls */
+.starlight-hud {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+  font-family: var(--font-body);
+}
+
+.starlight-hud-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.15rem;
+  background: rgba(12, 13, 22, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.5), 0 0 16px rgba(139, 92, 246, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.starlight-hud-badge:hover {
+  background: rgba(18, 19, 32, 0.92);
+  border-color: rgba(139, 92, 246, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6), 0 0 22px rgba(139, 92, 246, 0.35);
+}
+
+.starlight-hud-icon {
+  font-size: 0.95rem;
+  color: #fbbf24;
+  animation: starSpinGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes starSpinGlow {
+  0% { transform: scale(0.9) rotate(0deg); opacity: 0.7; }
+  100% { transform: scale(1.15) rotate(20deg); opacity: 1; filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.8)); }
+}
+
+.starlight-hud-title {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.starlight-hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: fiberPulse 2s infinite ease-in-out;
+}
+
+@keyframes fiberPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Expanded HUD Panel */
+.starlight-hud-panel {
+  width: 320px;
+  padding: 1.4rem;
+  background: rgba(11, 12, 20, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(139, 92, 246, 0.22);
+  animation: hudPanelEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hudPanelEnter {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.starlight-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.starlight-hud-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.starlight-rr-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #f1f5f9;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.starlight-hud-branding h4 {
+  font-size: 0.92rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.starlight-hud-branding p {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.starlight-hud-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.starlight-hud-close:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.starlight-hud-section {
+  margin-bottom: 1.1rem;
+}
+
+.starlight-hud-section label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.starlight-theme-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+
+.theme-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.3rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+.theme-btn.active {
+  background: rgba(139, 92, 246, 0.18);
+  border-color: var(--accent-1);
+  color: var(--text-primary);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.3);
+}
+
+.color-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.color-swatch.diamond {
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+.color-swatch.champagne {
+  background: #fde68a;
+  box-shadow: 0 0 8px rgba(253, 230, 138, 0.9);
+}
+
+.color-swatch.nebula {
+  background: #c084fc;
+  box-shadow: 0 0 8px rgba(192, 132, 252, 0.9);
+}
+
+.starlight-hud-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.btn-hud-action {
+  width: 100%;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem;
+}
+
+.starlight-hud-hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .starlight-hud {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .starlight-hud-panel {
+    width: calc(100vw - 32px);
+    max-width: 320px;
+  }
+}
+
